@@ -1,9 +1,13 @@
 streamlit
 langchain
 langchain-community
+langchain-experimental
 langchain-openai
 langchain
 neo4j
 PyPDF2
 llama-index
 beautifulsoup4
+langchain-text-splitters
+tiktoken
+python-dotenv
