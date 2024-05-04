@@ -1,0 +1,11 @@
+user: What can i eat to reduce inflammation?
+bot:  Based on the text, here are some things you can eat to reduce inflammation:
+
+- Plant-based proteins like legumes, lentils, nuts, seeds, tofu and other whole soy foods. The text states these create less inflammation when digested compared to animal proteins.
+
+- Foods rich in antioxidants, polyphenols and phytoestrogens. The text mentions these compounds, found in plant proteins, are fantastic for reducing inflammation. 
+
+- Fish oil and probiotic supplements. The text recommends these as supplements that are often suggested to help reduce inflammation.
+
+The text also advises speaking to a dietitian who specializes in food intolerance before eliminating entire food groups like gluten and dairy, as more research is needed on their role in inflammation. It mentions some people feel better reducing intake of gluten and dairy but emphasizes personalized advice is important.
+
