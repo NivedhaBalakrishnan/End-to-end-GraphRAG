@@ -445,7 +445,6 @@ class GraphDBNeo4J():
     def data_to_graphdb(self, directory):
         json_dir = "json_data"
         files = os.listdir(directory)
-        
         for i, file in enumerate(files):
             print(f"Processing file: {file}")
             base_name = file.split('.')[0]
