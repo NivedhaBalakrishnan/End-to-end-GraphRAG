@@ -1,5 +1,5 @@
 import streamlit as st
-from graphRAG import GraphRAG
+from deprecated.graphRAG import GraphRAG
 from RAG import RAG
 import os
 
