@@ -12,3 +12,4 @@ langchain-text-splitters
 tiktoken
 python-dotenv
 langchain-anthropic
+deepeval
