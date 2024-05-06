@@ -8,8 +8,6 @@ The entities should be one of these:
     2. Disease
     3. Nutrients
     4. Health
-    5. Symptoms
-    6. Treatment
 The entities should contains only one value, not more than that.
 
 The relationship should be one of these:

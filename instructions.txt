@@ -1,0 +1,32 @@
+1. generate_data 
+    Input: source directory
+    Output: JSON with entities and relationships
+
+2. kg_construct
+    Input: JSON
+    Output: populate Noe4j database 
+
+3. GraphRAG
+# graph_embeddings.generate_embeddings()
+# graph_embeddings.create_vector_index()
+    Generate Embedding for each node
+    Go through each and every node, and collect the connected nodes and their relationships as sentences
+    Create Embeddings for those sentences
+    Create Vector Index for Embedding
+#graph_embeddings.get_response()
+    Input: Question
+    Output: Answer
+    Methodology: convert query to embedding and do similarity search to retrieve top k nodes, and use it to provide answer - cosine similarity.
+    G-Retriever: Retrieve sub-graph, convert subgraph to embedding and pass it as input arguments to LLM to get answer
+    https://github.com/XiaoxinHe/G-Retriever/tree/main
+
+#NLQ -> get_response()
+    Input: Question
+    Output: Answer
+    Methodology: It converts question to CQL and retrieve the data from Neo4j, use that to give an answer.
+
+4. RAG
+
+
+5. graphQA -> streamlit
+    
