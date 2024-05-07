@@ -1,0 +1,15 @@
+user: what can i eat for inflammation?
+bot: 
+1. Whole foods
+2. Plant protein
+3. Legumes
+4. Lentils  
+5. Nuts
+6. Seeds
+7. Fish
+8. Fruit  
+9. Vegetables
+10. Herbs
+11. Spices
+
+
