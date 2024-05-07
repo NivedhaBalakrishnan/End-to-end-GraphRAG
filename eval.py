@@ -1,18 +1,8 @@
 from deepeval import evaluate
 from deepeval.metrics import AnswerRelevancyMetric,GEval, FaithfulnessMetric, ContextualPrecisionMetric, ContextualRecallMetric, HallucinationMetric, ToxicityMetric, BiasMetric
 from deepeval.test_case import LLMTestCase, LLMTestCaseParams
-from datetime import datetime
 from scipy.spatial.distance import cosine
-import os
 
-config = {
-    "embedding_model": "bert-base-uncased",
-    "model": {
-        "type": "anthropic",
-        "api_key": os.environ.get('ANTHROPIC_API_KEY'),
-        "model_name": "claude-2.1",
-    }
-}
 
 class Evaluation:
     def __init__(self, model_name="gpt-3.5"):

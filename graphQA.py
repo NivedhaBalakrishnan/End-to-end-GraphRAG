@@ -1,23 +1,28 @@
 import streamlit as st
-from GraphRAG import NLQ, GraphEmbeddings
+from graph_RAG import graphRAG
 from RAG import RAG
 import os
 
 
-nlq = NLQ()
-graph_embeddings = GraphEmbeddings()
+graphRAG = graphRAG()
 rag = RAG()
 
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
+if "messages_graph_rag" not in st.session_state:
+    st.session_state.messages_graph_rag = []
+if "messages_recommendations" not in st.session_state:
+    st.session_state.messages_recommendations = []
 
 conversation_file_path = "conversation.txt"
+conversation_file_path2 = "conversation2.txt"
+conversation_file_path3 = "conversation3.txt"
 
 # Create a sidebar for navigation
 st.sidebar.title("Navigation")
 selected_page = st.sidebar.radio("Go to", ["QA with RAG", "QA with Graph RAG", "Knowledge Graph",
-                                           "Recommendations", "Semantic Search"])
+                                           "Recommendations"])
 
 # QA with RAG Page
 if selected_page == "QA with RAG":
@@ -56,7 +61,7 @@ if selected_page == "QA with Graph RAG":
     st.title("Ask me about Food and Disease!")
 
     # Display chat messages from history on app rerun
-    for message in st.session_state.messages:
+    for message in st.session_state.messages_graph_rag:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
@@ -66,27 +71,26 @@ if selected_page == "QA with Graph RAG":
         with st.chat_message("user"):
             st.markdown(prompt)
 
-        # Add user message to chat history
-        st.session_state.messages.append({"role": "user", "content": prompt})
+        # Add user message to Graph RAG chat history
+        st.session_state.messages_graph_rag.append({"role": "user", "content": prompt})
 
         # Get model response
-        # response = nlq.get_response(prompt)
-        response = graph_embeddings.get_response(prompt)
+        response = graphRAG.get_response(prompt)
 
         # Display model response in chat message container
         with st.chat_message("bot"):
             st.markdown(response)
 
-        # Add model response to chat history
-        st.session_state.messages.append({"role": "bot", "content": response})
+        # Add model response to Graph RAG chat history
+        st.session_state.messages_graph_rag.append({"role": "bot", "content": response})
 
-        with open(conversation_file_path, "a") as file:
+        with open(conversation_file_path2, "a") as file:
             file.write(f"user: {prompt}\n")
             file.write(f"bot: {response}\n\n")
 
 
 # Knowledge Graph Page
-elif selected_page == "Knowledge Graph":
+if selected_page == "Knowledge Graph":
     st.title("Knowledge Graph")
     # Add your code to display the knowledge graph here
     
@@ -96,8 +100,8 @@ elif selected_page == "Knowledge Graph":
 if selected_page == "Recommendations":
     st.title("Recommended Food for your Disease!")
 
-    # Display chat messages from history on app rerun
-    for message in st.session_state.messages:
+    # Display chat messages from Recommendations history on app rerun
+    for message in st.session_state.messages_recommendations:
         with st.chat_message(message["role"]):
             st.markdown(message["content"])
 
@@ -107,24 +111,19 @@ if selected_page == "Recommendations":
         with st.chat_message("user"):
             st.markdown(prompt)
 
-        # Add user message to chat history
-        st.session_state.messages.append({"role": "user", "content": prompt})
+        # Add user message to Recommendations chat history
+        st.session_state.messages_recommendations.append({"role": "user", "content": prompt})
 
         # Get model response
-        response = nlq.get_response(prompt)
+        response = graphRAG.get_response_recommedations(prompt)
 
         # Display model response in chat message container
         with st.chat_message("bot"):
             st.markdown(response)
 
-        # Add model response to chat history
-        st.session_state.messages.append({"role": "bot", "content": response})
+        # Add model response to Recommendations chat history
+        st.session_state.messages_recommendations.append({"role": "bot", "content": response})
 
-        with open(conversation_file_path, "a") as file:
+        with open(conversation_file_path3, "a") as file:
             file.write(f"user: {prompt}\n")
             file.write(f"bot: {response}\n\n")
-
-# About Page
-elif selected_page == "Semantic Search":
-    st.title("About")
-    st.write("Semantic Search Page")
