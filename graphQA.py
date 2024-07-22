@@ -12,11 +12,11 @@ log_format = "%(asctime)s - %(levelname)s - %(message)s"
 logging.basicConfig(filename=log_file, level=logging.INFO, format=log_format)
 logger = logging.getLogger(__name__)
 
-# # Set up logging
-# hlp = Helper()
-# # # hlp.clear_log_file()
-# log = hlp.get_logger()
-# log.info("Starting the app")
+# Set up logging
+hlp = Helper()
+# # hlp.clear_log_file()
+log = hlp.get_logger()
+log.info("Starting the app")
 
 
 model = GraphRAG()

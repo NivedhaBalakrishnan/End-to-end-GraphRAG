@@ -40,9 +40,9 @@ class GraphRAG():
         self.OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
         self.OPENAI_ENDPOINT = os.getenv('OPENAI_BASE_URL') + '/embeddings'
 
-        self.VECTOR_INDEX_NAME = 'article_chunk'
-        self.VECTOR_NODE_LABEL = 'Chunk'
-        self.VECTOR_SOURCE_PROPERTY = 'text'
+        self.VECTOR_INDEX_NAME = 'entity_vector_index'
+        self.VECTOR_NODE_LABEL = 'Entity'
+        self.VECTOR_SOURCE_PROPERTY = 'Entity'
         self.VECTOR_EMBEDDING_PROPERTY = 'textEmbedding'
 
   
@@ -106,6 +106,15 @@ class GraphRAG():
         except Exception as e:
             self.log.error(f'Error pretty printing chain: {e}')
             raise e
+
+
+if __name__ == '__main__':
+    graph = GraphRAG()
+    question = 'What is the bone marrow?'
+    response, source_content, elapsed_time = graph.get_response(question)
+    print(f"Response: {response}")
+    print(f"Source: {source_content}")
+    print(f"Elapsed time: {elapsed_time}")
 
 
     

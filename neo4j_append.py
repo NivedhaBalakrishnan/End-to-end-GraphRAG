@@ -154,22 +154,3 @@ class Neo4jAppend:
             self.log.info(f"Successfully processed file")
             return True
 
-
-
-    # def __init__(self, uri, user, password):
-    #     self.__uri = uri
-    #     self.__user = user
-    #     self.__password = password
-    #     self.__driver = GraphDatabase.driver(self.__uri, auth=(self.__user, self.__password))
-    #     self.__session = self.__driver.session()
-
-
-    # def append(self, query):
-    #     self.__session.run(query)
-
-
-    # def close(self):
-    #     self.__session.close()
-    #     self.__driver.close()
-
-
