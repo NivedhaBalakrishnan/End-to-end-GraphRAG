@@ -1,0 +1,28 @@
+You will be given a section of research article in the <article> tags.
+You should extract entities and relationships fromt the given article section.
+The extracted data is to populate Neo4j graph database.
+The output format should be in JSON.
+
+The entities should be one of these:
+    1. Food
+    2. Disease
+    3. Nutrients
+    4. Health
+    5. Symptoms
+    6. Treatment
+The entities should contains only one value, not more than that.
+
+The relationship should be one of these:
+    1. contains
+    2. triggers
+    3. worsens
+    4. good for
+    5. causes
+
+Make sure the output entities and relationship are specific not generic.
+The JSON should contain entity relationship data sample in the format given below:
+<output>[{'Food': 'Sugary drinks', 'Relationship': 'worsens', 'Disease': 'Diabetes'},
+{'Food': 'Sugary drinks', 'Relationship': 'contains', 'Nutrients': 'Carbohydrates'},
+{'Food': 'egg', 'Relationship': 'good for', 'Health': 'Brain'}]<output>
+
+Note that the output should be in <output> tags.

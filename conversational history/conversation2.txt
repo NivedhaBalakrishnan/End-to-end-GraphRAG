@@ -1,0 +1,19 @@
+user: food to avoid for inflammation
+bot: 
+Food to avoid for inflammation include:  
+1. processed food
+2. red meat 
+3. food containing saturated fats
+4. food with high sugar content
+
+
+user: what can i eat for inflammation?
+bot: 
+Foods that can be eaten for reducing inflammation include:  
+1. Plant-based proteins such as legumes, lentils, nuts, seeds, tofu and soy foods
+2. Whole foods rich in antioxidants, polyphenols and phytoestrogens  
+3. Fish and seafood
+4. Vegetables and fruits  
+5. Herbs and spices
+
+

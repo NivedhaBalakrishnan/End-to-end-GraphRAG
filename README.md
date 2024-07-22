@@ -1,42 +1,95 @@
-# Graph RAG for Medical Data Using LLM
+# Graph RAG for Medical Data
 
-## Overview
+This project implements a Graph Retrieval-Augmented Generation (Graph RAG) system for medical data using a combination of LLM-based triplet extraction, knowledge graph construction, and semantic search capabilities.
 
-This project demonstrates a comprehensive approach to building a Graph Retrieval-Augmented Generation (RAG) system for medical data. It leverages Large Language Models (LLMs) to generate knowledge triplets from medical literature and integrates them into a Neo4j graph database for advanced querying and information retrieval.
+## Description
 
-## Project Structure
+The Graph RAG project leverages advanced LLM techniques to enhance medical data retrieval and understanding. Key functionalities include:
 
-- **KGOpenai.py**: Generates triplets from medical articles using an LLM. This script extracts meaningful relationships and entities from text to form structured knowledge.
-  
-- **GraphDB.py**: Utilizes `KGOpenai.py` to convert the extracted triplets into JSON format, which is then loaded into a Neo4j database. This script sets up the graph database with the initial data.
-  
-- **GraphRAG.py**: Implements the Retrieval-Augmented Generation (RAG) approach using the Neo4j database. It enables querying the graph for relevant information to enhance the response generation.
-  
-- **Neo4j_append.py**: Provides functionality to add new data to the Neo4j database. This script is useful for expanding the knowledge base with additional information.
-  
-- **GraphQA.py**: A Streamlit application that interfaces with the RAG system. It allows users to query the graph database and get responses generated based on the retrieved data.
+- **Triplet Generation**: Extracts and curates triplets from medical articles and books related to inflammation.
+- **Knowledge Graph Construction**: Constructs a dynamic knowledge graph using Neo4j to represent extracted data.
+- **Semantic Search**: Implements RAG techniques to query and retrieve relevant information from the knowledge graph.
+- **Streamlit Application**: Provides an interactive interface to explore and query the constructed knowledge graph.
 
-## Usage
+## Project Setup
 
-1. **Generate Triplets**: Run `KGOpenai.py` to extract triplets from medical texts.
-   
-2. **Populate Neo4j**: Use `GraphDB.py` to load the triplets into the Neo4j database.
-   
-3. **Query and Generate Responses**: Execute `GraphRAG.py` to perform retrieval and generation tasks using the graph database.
-   
-4. **Expand the Database**: Use `Neo4j_append.py` to add more data as needed.
-   
-5. **Interact with the System**: Launch `GraphQA.py` to use the Streamlit app for querying and interacting with the RAG system.
+### Environment Setup
 
-## Requirements
+1. **Clone the Repository**:
 
-- Python 3.x
-- Neo4j
-- Streamlit
-- Required Python libraries (listed in `requirements.txt`)
+    ```bash
+    git clone git@github.com:NivedhaBalakrishnan/End-to-end-GraphRAG.git
+    cd graph-rag-medical-data
+    ```
 
-## Setup
+2. **Create a Virtual Environment** (optional but recommended):
 
-1. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    ```
+
+3. **Install Dependencies**:
+
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### Running the Project
+
+1. **Generate Triplet Data**:
+
+    Run `generate_data.py` to extract triplets from your source texts:
+
+    ```bash
+    python generate_data.py
+    ```
+
+2. **Build Knowledge Graph**:
+
+    Use `kgconstruct.py` to construct the knowledge graph in Neo4j:
+
+    ```bash
+    python kgconstruct.py
+    ```
+
+3. **Load Triplets into Neo4j**:
+
+    Execute `GraphDB.py` to load the generated triplets into the Neo4j database:
+
+    ```bash
+    python GraphDB.py
+    ```
+
+4. **Run RAG Model**:
+
+    Execute `GraphRAG.py` to perform retrieval-augmented generation using the Neo4j graph:
+
+    ```bash
+    python GraphRAG.py
+    ```
+
+5. **Start Streamlit Application**:
+
+    Run `GraphQA.py` to launch the interactive Streamlit application for querying the knowledge graph:
+
+    ```bash
+    streamlit run GraphQA.py
+    ```
+
+6. **Add New Data**:
+
+    If you need to add new data to the Neo4j database, use `Neo4j_append.py`:
+
+    ```bash
+    python Neo4j_append.py
+    ```
+
+## Contributing
+
+Contributions are welcome! Please open issues or submit pull requests for any improvements or bug fixes.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
