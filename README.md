@@ -19,7 +19,7 @@ The Graph RAG project leverages advanced LLM techniques to enhance medical data 
 
     ```bash
     git clone git@github.com:NivedhaBalakrishnan/End-to-end-GraphRAG.git
-    cd graph-rag-medical-data
+    cd End-to-end-GraphRAG
     ```
 
 2. **Create a Virtual Environment** (optional but recommended):
@@ -85,11 +85,3 @@ The Graph RAG project leverages advanced LLM techniques to enhance medical data 
     ```bash
     python Neo4j_append.py
     ```
-
-## Contributing
-
-Contributions are welcome! Please open issues or submit pull requests for any improvements or bug fixes.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
